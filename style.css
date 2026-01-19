@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4, .font-cursive {
+    font-family: 'Dancing Script', cursive;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        opacity: 1;
+        box-shadow: 0 0 10px rgba(225, 29, 72, 0.5);
+    }
+    50% {
+        opacity: 0.9;
+        box-shadow: 0 0 25px rgba(225, 29, 72, 0.8);
+    }
+}
+
+@keyframes blossom {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-blossom {
+    animation: blossom 0.8s ease-out forwards;
+}
+
+.flower {
+    position: absolute;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.flower:hover {
+    transform: scale(1.2) rotate(10deg);
+    z-index: 10;
+}
+
+.confetti {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    pointer-events: none;
+    z-index: 9999;
+}
